@@ -8,6 +8,7 @@ from blog.models import ITEM_CHOICES
 
 class DogWalkerDetails(models.Model):
     Name = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)
+    rating = models.DecimalField(default=0,decimal_places=2,max_digits=5)
     image = models.ImageField(upload_to='media/image/', blank=True, null=True)
     Age = models.IntegerField()
     Profession = models.CharField(max_length=300,blank=True)

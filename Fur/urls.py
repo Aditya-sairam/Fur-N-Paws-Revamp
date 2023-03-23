@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from users import views as users_views
 from blog import views as blog_views
+from DogWalker import views as dog_walker_views
 from django.contrib.auth import views as auth_views
 from searches import views as search_views
 from django.conf import settings
@@ -49,6 +50,10 @@ urlpatterns = [
     path('checkout/',order_view.checkout,name='checkout'),
     path('orders/',order_view.Orders,name='Orders'),
     #path('order/',cart_view.OrderSummary,name='order_summary')
+
+    #DogWalker Urls
+    path('dogwalker-details/',dog_walker_views.dog_walker_details_entry_view,name='enter-details'),
+    path('dogwalker-list/',dog_walker_views.dog_walkers_list_view,name='enter-details'),
 
 
     url(r'^add-to-cart/(?P<item_id>[-\w]+)/$', carte_view.add_to_cart, name="add_to_cart"),
